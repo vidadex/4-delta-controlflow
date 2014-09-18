@@ -28,7 +28,7 @@ public class ControlFlow {
 
 
 
-        // Find out if the 'sentenceToTest' is in face a pangram.
+        // Find out if the 'sentenceToTest' is in fact a pangram.
         // then make a "writeSuccess" method call with the following pieces of data:
         // 1. number of missing letters (if any)
         // 2. which letters (if any)
