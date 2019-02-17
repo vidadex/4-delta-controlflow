@@ -21,7 +21,17 @@ public class ControlFlow {
         char[] missingLetters = new char[26];
 
         //start here!
+        int numOfMissingLetters = 0;
+        for (int i = 0; i < alphabet.length; i++) {
+            char letterToFind = alphabet[i];
+            if (hasLetter(letterToFind, sentenceToTest) == false) {
+                missingLetters[numOfMissingLetters] = letterToFind;
+                numOfMissingLetters++;
 
+            }
+        }
+
+        writeSuccess(numOfMissingLetters, missingLetters, sentenceToTest);
 
 
 
@@ -37,6 +47,28 @@ public class ControlFlow {
 
 
 
+
+    }
+
+
+    public boolean hasLetter(char aLetter, char[] aSentence) {
+        boolean found = false;
+        int position = 0;
+        while (!found) {
+            if (aLetter == aSentence[position]) {
+                // we found it
+                found = true;
+            } else if (position == aSentence.length - 1) {
+                // we are at the end of the array
+                break;
+            } else {
+                // increment the position in the array
+                position++;
+            }
+
+
+        }
+        return found;
 
     }
 
@@ -69,7 +101,7 @@ public class ControlFlow {
     public void writeSuccess(int aNumMisssing, char[] aMissingLetters, char[] aSentence ){
 
         Log.e("OPERATOR","testing sentence:" + String.valueOf(aSentence));
-        String message = String.valueOf(aNumMisssing) + " missing:" + String.valueOf(aMissingLetters);
+        String message = String.valueOf(aNumMisssing) + " missing: " + String.valueOf(aMissingLetters);
         Log.e("OPERATOR",message);
     }
 
